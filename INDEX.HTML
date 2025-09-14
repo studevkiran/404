@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms Assignment AY 2025-26</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-300 p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-slate-800 shadow-xl rounded-lg p-6 sm:p-10 space-y-8">
+        <div class="bg-red-900 border border-red-700 text-red-100 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Disclaimer:</strong>
+            <span class="block sm:inline">The answers provided here are for illustrative purposes only and should not be considered genuine. Copying them is at your own risk.</span>
+        </div>
+        
+        <header>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-100 border-b-4 border-gray-600 pb-2">Design and Analysis of Algorithms Assignment Questions AY 2025-26</h1>
+        </header>
+        
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-400 mt-8 border-b-2 border-gray-600 pb-1">PART - A</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Question 1:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Describe the fundamentals of Algorithmic problem solving. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The fundamentals of Algorithmic problem solving involve a sequence of steps to design and analyze an algorithm. This process begins with clearly understanding the problem, identifying its inputs, outputs, and constraints. Next, one must decide on the computational device or model the algorithm will run on, considering its resource constraints. A crucial decision is whether an exact solution or an approximate solution is needed, balancing optimality with speed. Then, appropriate algorithm design techniques are chosen, such as Divide and Conquer, Dynamic Programming, or Greedy Algorithms. After designing the algorithm, its correctness must be proven mathematically or logically. The algorithm is then analyzed for its efficiency (time and space complexity) under worst-case, best-case, and average-case scenarios. Finally, the algorithm is coded in a programming language and tested for correctness and efficiency. The solution to a problem is first expressed as an algorithm, which is then converted into a program that accepts input and produces output.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain Analysis Framework. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Analysis Framework for algorithms involves evaluating their efficiency, primarily focusing on time efficiency and space efficiency. Time efficiency measures how fast an algorithm executes, while space efficiency refers to the amount of memory required. The analysis often concentrates on time efficiency as modern technology has reduced concerns about space. - Key components of this framework include identifying the basic operation – the operation that contributes most to the running time and executes the maximum number of times, typically depending on the input size. The running time T(n) is approximated as T(n) ~ b * C(n), where b is the execution time for the basic operation and C(n) is the number of times the basic operation is executed for an input size n. The framework also considers orders of growth for large input sizes to understand how an algorithm's behavior changes with n. When the basic operation's execution count depends on specific conditions (not just input size), worst-case, best-case, and average-case efficiencies are analyzed separately.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is an Algorithm? Explain with a simple example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- An Algorithm is defined as a finite sequence of unambiguous instructions followed to accomplish a given task. It is a step-by-step procedure to solve a problem in a finite number of steps, accepting inputs and producing desired outputs, and must eventually terminate.
+                            <br>- Key properties of an algorithm include:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Input: Zero or more inputs, with a specified range.</li>
+                                <li>Output: At least one correct result must be produced.</li>
+                                <li>Definiteness: Each instruction must be clear and unambiguous.</li>
+                                <li>Effectiveness: Instructions should be simple and transform input to desired output.</li>
+                                <li>Finiteness: The algorithm must terminate after a finite sequence of instructions.</li>
+                            </ul>
+                            - Example (Computing GCD): The Greatest Common Divisor (GCD) of two numbers m and n is the largest integer that divides both m and n with a zero remainder. For GCD(10, 30):
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Numbers dividing 10 are 1, 2, 5, 10.</li>
+                                <li>Numbers dividing 30 are 1, 2, 5, 6, 10, 30.</li>
+                                <li>Common divisors are 1, 2, 5, 10. The greatest among them is 10. Therefore, GCD(10, 30) = 10. This problem can be solved using various methods like Euclid's algorithm or repetitive subtraction.</li>
+                            </ol>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Describe different orders of growth. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Orders of growth describe how an algorithm's running time or resource consumption scales with the input size n, especially for large n. They are crucial for comparing the efficiency of different algorithms. The common computing time functions, ordered from lowest to highest growth, are:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>1 (or any constant): Constant running time, independent of input size.</li>
+                                <li>log N: Logarithmic running time, typically found in algorithms that reduce problem size by a constant factor in each step (e.g., binary search).</li>
+                                <li>N: Linear running time, where time increases proportionally with N (e.g., linear search).</li>
+                                <li>N log N: Common in efficient sorting algorithms like quick sort and merge sort.</li>
+                                <li>N²: Quadratic running time, often seen in algorithms with two nested loops (e.g., bubble sort, selection sort, matrix addition).</li>
+                                <li>N³: Cubic running time, for algorithms with three nested loops (e.g., matrix multiplication).</li>
+                                <li>2^N: Exponential running time, grows very rapidly even for small N (e.g., Tower of Hanoi, generating subsets). Algorithms with this complexity are impractical for large N.</li>
+                                <li>N!: Factorial running time, the fastest-growing complexity, found in algorithms generating all permutations of a set. Also impractical for large N.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What are the Best case, Average case and Worst case efficiencies? Explain with example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Algorithm efficiency can depend not only on the input size n but also on the specific arrangement of input data. This leads to the concepts of best, average, and worst-case efficiencies:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Worst-case efficiency: The efficiency of an algorithm for an input of size n that causes it to take the longest time to execute among all possible inputs of that size. In this scenario, the algorithm performs the maximum number of steps.</li>
+                                <li>Best-case efficiency: The efficiency of an algorithm for an input of size n that causes it to take the least time to execute among all possible inputs of that size. Here, the algorithm runs fastest.</li>
+                                <li>Average-case efficiency: The efficiency for an input of size n considering all possible inputs, usually involving statistical analysis to determine the average amount of time. This is typically considered for randomized inputs.</li>
+                            </ul>
+                            - Example (Linear Search):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Consider searching for an element target in an array arr of n elements using a linear search algorithm.</li>
+                                <li>Best-case: Occurs when the target element is found at the very first position of the array. The algorithm performs only one comparison. The time complexity is O(1).</li>
+                                <li>Worst-case: Occurs when the target element is at the very end of the array or is not present in the array at all. The algorithm has to traverse through all n elements, performing n comparisons. The time complexity is O(n).</li>
+                                <li>Average-case: Occurs when the target element is located somewhere in the middle of the array, or if it's equally likely to be anywhere. On average, the algorithm might check n/2 elements. The time complexity is O(n).</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Question 2:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write an Algorithm to find the maximum among n elements stored in a 1-dimensional array. Analyse the algorithm mathematically. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Algorithm (Inferring from general algorithmic principles and common knowledge - not explicitly provided in sources but fundamental):
+                            - Mathematical Analysis:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Input Size (n): The number of elements in the array arr.</li>
+                                <li>Basic Operation: The comparison arr[i] > max_element.</li>
+                                <li>Number of Times Basic Operation is Executed (C(n)):
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>The for loop runs from i = 1 to n-1.</li>
+                                        <li>In each iteration, one comparison arr[i] > max_element is performed.</li>
+                                        <li>Therefore, the loop executes (n-1) - 1 + 1 = n-1 times.</li>
+                                        <li>Thus, C(n) = n-1.</li>
+                                    </ul>
+                                </li>
+                                <li>Order of Growth: C(n) is n-1, which is a linear function of n.</li>
+                                <li>Time Complexity: The algorithm has a time complexity of O(n), as the number of comparisons grows linearly with the input size. This holds for best, average, and worst cases because the loop always runs n-1 times regardless of the element values.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Describe the basic efficiency classes. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The basic efficiency classes categorize algorithms based on their order of growth, providing a theoretical measure of their performance independent of specific hardware or software. These classes help in understanding how an algorithm scales with increasing input size N. They are:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Constant (1): Running time is fixed, regardless of N.</li>
+                                <li>Logarithmic (log N): Logarithmic running time, typically found in algorithms that reduce problem size by a constant factor in each step (e.g., binary search).</li>
+                                <li>Linear (N): Linear running time, where time increases proportionally with N (e.g., linear search).</li>
+                                <li>N log N: Running time is slightly more than linear, found in efficient sorting algorithms like quick sort and merge sort.</li>
+                                <li>N²: Quadratic running time, often seen in algorithms with two nested loops (e.g., bubble sort, selection sort, matrix addition).</li>
+                                <li>N³: Cubic running time, for algorithms with three nested loops (e.g., matrix multiplication).</li>
+                                <li>2^N: Exponential running time, grows very rapidly even for small N (e.g., Tower of Hanoi, generating subsets). Algorithms with this complexity are impractical for large N.</li>
+                                <li>N!: Factorial running time, the fastest-growing complexity, found in algorithms generating all permutations of a set. Also impractical for large N.</li>
+                            </ul>
+                            - These classes are ordered by their growth rate from lowest to highest: 1 &lt; log(n) &lt; n &lt; n * log(n) &lt; n² &lt; n³ &lt; 2^n &lt; n!.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain the algorithm to generate Fibonacci series using recursion. Perform mathematical analysis. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Algorithm (Generating Fibonacci series using recursion - not explicitly provided in sources but fundamental, based on recursion definition): A recursive function is one that calls itself during execution, where the solution to a problem depends on solutions to smaller instances of the same problem. Every recursive function must have a base case (a special case solvable without recursion, acting as a terminating condition) and a general case (the part that reduces the problem size towards the base case). For Fibonacci series, F(n) = F(n-1) + F(n-2) with base cases F(0) = 0 and F(1) = 1.
+                            - Mathematical Analysis of Recursive Algorithm:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>General Plan: Analyzing recursive algorithms typically involves setting up a recurrence relation that describes the running time T(n) in terms of the running time on smaller inputs. The general plan for analyzing recursive algorithms, as mentioned in the notes, is to apply a "general plan for analysing the time efficiency of recursive algorithm". While the specific method for solving recurrence relations (e.g., Master Theorem, substitution) is not detailed in the provided notes, the concept relies on breaking down the problem into smaller, identical subproblems.</li>
+                                <li>For Fibonacci(n):
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Let T(n) be the time complexity to compute Fibonacci(n).</li>
+                                        <li>Base Cases: T(0) = c1 (constant time for n=0) and T(1) = c2 (constant time for n=1).</li>
+                                        <li>Recursive Case: T(n) = T(n-1) + T(n-2) + c3 (where c3 represents the constant time for addition and checking conditions).</li>
+                                        <li>This recurrence relation T(n) = T(n-1) + T(n-2) + c3 is similar to the Fibonacci sequence itself, leading to an exponential time complexity. This is because many subproblems are recomputed multiple times (e.g., Fibonacci(n-2) is computed in both Fibonacci(n-1) and Fibonacci(n)). The order of growth for this specific recursive Fibonacci implementation is O(2^n).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Prove that if t₁(n) ∈ O(g₁(n)) and t₂(n) ∈ O(g₂(n)) then t₁(n) + t₂(n) ∈ O(max {g₁(n), g₂(n)}), where t(n) and g(n) are non negative functions. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Proof using Big-Oh Definition: The Big-Oh (O) notation formally expresses the upper bound of an algorithm's time complexity. If f(n) is O(g(n)), it means there exist positive constants c and n₀ such that f(n) ≤ c * g(n) for all n ≥ n₀.
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Given t₁(n) ∈ O(g₁(n)): There exist positive constants c₁ and n₁ such that t₁(n) ≤ c₁ * g₁(n) for all n ≥ n₁.</li>
+                                <li>Given t₂(n) ∈ O(g₂(n)): There exist positive constants c₂ and n₂ such that t₂(n) ≤ c₂ * g₂(n) for all n ≥ n₂.</li>
+                                <li>Let n₀ = max(n₁, n₂) and c₃ = c₁ + c₂.</li>
+                                <li>For all n ≥ n₀, we can add the two inequalities: t₁(n) + t₂(n) ≤ c₁ * g₁(n) + c₂ * g₂(n)</li>
+                                <li>We know that g₁(n) ≤ max{g₁(n), g₂(n)} and g₂(n) ≤ max{g₁(n), g₂(n)}.</li>
+                                <li>Substituting these into the inequality: t₁(n) + t₂(n) ≤ c₁ * max{g₁(n), g₂(n)} + c₂ * max{g₁(n), g₂(n)} t₁(n) + t₂(n) ≤ (c₁ + c₂) * max{g₁(n), g₂(n)} t₁(n) + t₂(n) ≤ c₃ * max{g₁(n), g₂(n)}</li>
+                                <li>Since we found positive constants c₃ and n₀ satisfying the definition, it proves that t₁(n) + t₂(n) ∈ O(max{g₁(n), g₂(n)}).</li>
+                            </ol>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Apply general plan for analysing the time efficiency of recursive algorithm. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The general plan for analyzing the time efficiency of a recursive algorithm involves several steps:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Understand the Problem and Algorithm: Clearly define what the algorithm does and how it breaks down the problem recursively.</li>
+                                <li>Identify the Basic Operation: Determine the operation that contributes most significantly to the running time (e.g., comparison, arithmetic operation).</li>
+                                <li>Set up a Recurrence Relation: Express the number of times the basic operation is executed, T(n), for an input of size n in terms of T(k) for smaller inputs k. This also includes identifying the base case (the condition where recursion stops) and its constant time complexity. The recurrence relation describes how the problem size is reduced in each recursive call and what work is done outside of recursive calls.</li>
+                                <li>Solve the Recurrence Relation: Determine the order of growth for T(n) from the recurrence relation. (While the notes define recursion and its components, they don't explicitly detail methods like Master Theorem or substitution for solving recurrence relations, which are typically used in this step.)</li>
+                                <li>Simplify and Obtain Order of Growth: Use standard mathematical formulas and techniques to simplify the solution and express it using asymptotic notation (e.g., Big-Oh, Big-Omega, Big-Theta).</li>
+                            </ol>
+                            - Essentially, it's about defining the problem's recursive structure (base case and general case) and then expressing its computational cost in a recursive formula.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Illustrate asymptotic notation with example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Asymptotic notations are mathematical tools used to describe the efficiency of algorithms based on their order of growth for large input sizes n. They allow for comparison of algorithms' efficiency without considering constant factors or lower-order terms. The main notations are Big-Oh (O), Big-Omega (Ω), and Big-Theta (Θ).
+                            <br>- Big-Oh (O) Notation (Upper Bound):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Informal Definition: O(g(n)) represents a set of functions with a smaller or the same order of growth as g(n) as n goes to infinity. It is a measure of the longest amount of time an algorithm could take.</li>
+                                <li>Formal Definition: f(n) = O(g(n)) if there exist positive constants c and n₀ such that f(n) ≤ c * g(n) for all n ≥ n₀.</li>
+                                <li>Example: Let f(n) = 100n + 5. To express f(n) using Big-Oh: We need 100n + 5 ≤ c * g(n) for n ≥ n₀. If we choose g(n) = n and c = 101, then 100n + 5 ≤ 101n for n ≥ 5. So, f(n) ∈ O(n). This indicates that the algorithm's running time grows linearly or slower than n for large inputs.</li>
+                            </ul>
+                            - Big-Omega (Ω) Notation (Lower Bound):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Formal Definition: f(n) = Ω(g(n)) if there exist positive constants c and n₀ such that f(n) ≥ c * g(n) for all n ≥ n₀. It signifies that the algorithm's running time will consume at least the specified time.</li>
+                                <li>Example: Let f(n) = 100n + 5. To express f(n) using Big-Omega: We need 100n + 5 ≥ c * g(n) for n ≥ n₀. If we choose g(n) = n and c = 100, then 100n + 5 ≥ 100n for n ≥ 0. So, f(n) ∈ Ω(n). This means the algorithm's running time grows at least linearly.</li>
+                            </ul>
+                            - Big-Theta (Θ) Notation (Tight Bound):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Formal Definition: f(n) = Θ(g(n)) if there exist positive constants c₁, c₂, and n₀ such that c₁ * g(n) ≤ f(n) ≤ c₂ * g(n) for all n ≥ n₀. It denotes both a lower and upper bound, meaning the algorithm's running time is "tightly bound" by g(n) within constant factors.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Perform mathematical analysis to compute factorial using non-recursive with the algorithm. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Algorithm (Non-recursive factorial - not explicitly provided in sources but fundamental):
+                            - Mathematical Analysis (General plan for non-recursive algorithms):
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Input Size (n): The integer n for which the factorial is to be computed.</li>
+                                <li>Basic Operation: The multiplication result = result * i.</li>
+                                <li>Number of Times Basic Operation is Executed (C(n)):
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>The for loop runs from i = 1 to n.</li>
+                                        <li>In each iteration, one multiplication operation is performed.</li>
+                                        <li>Therefore, the loop executes n times.</li>
+                                        <li>Thus, C(n) = n.</li>
+                                    </ul>
+                                </li>
+                                <li>Order of Growth: C(n) is n, which is a linear function of n.</li>
+                                <li>Time Complexity: The algorithm has a time complexity of O(n), as the number of multiplications grows linearly with the input n.</li>
+                            </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Question 3:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write a program to sort given elements using selection sort. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The detailed Algorithm for Selection Sort is provided in the source. It includes the purpose, inputs (n, arr), output (arr), and the pseudocode: - The notes also explain the procedure and provide an example trace for {64, 25, 12, 22, 11} illustrating the passes-.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain Brute force approach method. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Brute Force approach is a straightforward and simple technique for solving a problem, based directly on the problem's statement and definitions, without emphasizing efficiency. The concept is often summarized as "Just do it".
+                            <br>- Advantages: Applicable to a wide variety of problems, allows for simple and easy algorithm writing (e.g., bubble sort, selection sort, matrix multiplication), and can be used to judge more efficient alternative approaches.
+                            <br>- Disadvantages: Rarely yields efficient algorithms, can be unacceptably slow for some problems (e.g., bubble sort), and is not as constructive or creative as other design techniques like divide and conquer.
+                            <br>- Examples: Finding GCD of two numbers (consecutive integer checking method), matrix multiplication, addition, Selection sort, Bubble sort, Linear search (sequential search), Brute-force string matching, and the Traveling Salesman Problem (TSP) by computing all routes.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the Algorithm for Bubble sort. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The detailed Algorithm for Bubble Sort is provided in the source. It includes the purpose, inputs (a[], n), output (a), and the pseudocode: - The notes also explain the working with an illustration for {6, 3, 0, 5}.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Describe Breadth first search method for the graph G = {V, E}. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Breadth-First Search (BFS) is a graph traversal algorithm that explores a graph level by level. It starts from a root node and visits all its immediate neighbors before moving to the next level of neighbors. BFS uses a queue data structure.
+                            <br>- Steps involved:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Create a queue and mark all vertices as not visited.</li>
+                                <li>Choose a starting vertex, enqueue it, and mark it as visited.</li>
+                                <li>While the queue is not empty, dequeue a vertex.</li>
+                                <li>For the dequeued vertex, enqueue all its non-visited neighbors and mark them as visited.</li>
+                                <li>Repeat steps 3-4 until the queue is empty.</li>
+                                <li>If there are still unvisited vertices (for disconnected graphs), choose another starting vertex and repeat.</li>
+                            </ol>
+                            - An illustration example showing BFS traversal for a graph starting from node 0 is provided in the notes. - The detailed Algorithm BFS is also provided in the source.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Find the maximum profit you can carry in the knapsack without exceeding its capacity solve using 0/1 knapsack. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The 0/1 Knapsack Problem means that items are either completely filled or not at all into a knapsack; they are not divisible. It is typically solved using dynamic programming.
+                            <br>- Objective: To place objects into a knapsack of capacity M such that the maximum total profit is obtained, without the total weight exceeding M. Given n objects with weights w₁, w₂, ..., wₙ and profits p₁, p₂, ..., pₙ.
+                            <br>- The detailed Algorithm KNAPSACK (for 0/1 Knapsack using dynamic programming) is provided in the source. It defines the purpose, inputs (n, m, w, p), and output (v, the optimal solution vector). The pseudocode outlines how a 2D table V[i,j] is populated: - An example problem structure for weights and profits is given, but without a full trace.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Given the following graph, use BFS to find the traversal order starting from vertex A. [5 Marks] (Note: This question requires a specific graph image)</p>
+                            <p class="pl-4 text-gray-400">- The specific graph from your assignment is shown in. To apply BFS, you would follow the steps outlined in the notes:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Initialize a queue and a "visited" set/array.</li>
+                                <li>Enqueue vertex A, mark it visited.</li>
+                                <li>Dequeue A. Visit its unvisited neighbors (e.g., B, C) and enqueue them, marking them visited.</li>
+                                <li>Dequeue B. Visit its unvisited neighbors (e.g., D, E) and enqueue them, marking them visited. (A and C are already visited).</li>
+                                <li>Dequeue C. Visit its unvisited neighbors (e.g., E, F) and enqueue them, marking them visited. (E might be visited already if B processed it first, depends on graph structure).</li>
+                                <li>Continue this process until the queue is empty.</li>
+                            </ol>
+                            - The order in which nodes are dequeued and their neighbors processed will determine the traversal order.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain travelling salesman problem with example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Travelling Salesman Problem (TSP) involves a salesperson starting at a specified city, visiting all n-1 other cities exactly once, and returning to the starting city. The objective is to find a route (or "tour") through the cities that minimizes the total cost (or distance), thereby maximizing profit.
+                            <br>- This problem can be modeled as a directed weighted graph, where cities are vertices and edge weights represent distances or costs between cities.
+                            <br>- Brute Force Approach for TSP: Involves generating all possible permutations of routes, computing the total length for each, and then selecting the shortest one. However, this method is computationally very expensive; for example, 16 cities result in over 1.3 trillion possible routes.
+                            <br>- Example: Consider cities P, Q, R, S with given distances between them represented in a cost adjacency matrix. If starting and ending at city P, the (n-1)! permutations of intermediate cities are generated.
+                            <br>- Possible routes and their costs:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>P&rarr;Q&rarr;R&rarr;S&rarr;P (Cost = 22)</li>
+                                <li>P&rarr;Q&rarr;S&rarr;R&rarr;P (Cost = 15)</li>
+                                <li>P&rarr;R&rarr;Q&rarr;S&rarr;P (Cost = 27)</li>
+                                <li>P&rarr;R&rarr;S&rarr;Q&rarr;P (Cost = 15)</li>
+                                <li>P&rarr;S&rarr;Q&rarr;R&rarr;P (Cost = 27)</li>
+                                <li>P&rarr;S&rarr;R&rarr;Q&rarr;P (Cost = 22)</li>
+                            </ul>
+                            - In this example, the minimum cost is 15, achieved by routes like P&rarr;Q&rarr;S&rarr;R&rarr;P or P&rarr;R&rarr;S&rarr;Q&rarr;P.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Question 4:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain Decrease and conquer method by giving an example. [6 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Decrease-and-Conquer method is an algorithmic technique for solving problems by transforming a problem of size n into a smaller instance of the same problem (e.g., n-1, n/2, etc.). The steps involve:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Decrease: Changing the problem size from n to a smaller size.</li>
+                                <li>Conquer: Solving the problem of the smaller size.</li>
+                                <li>Combine: Converting the solution of the smaller problem into a solution for the larger problem.</li>
+                            </ol>
+                            - This technique can be implemented using top-down (recursion) or bottom-up (iterative) approaches.
+                            <br>- Three Major Variations:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Decrease by constant: Problem size is decremented by a fixed constant (usually one) in each iteration.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Example: Insertion Sort. It sorts a list by taking one element at a time from the unsorted part and inserting it into its correct position in the already sorted part of the list. The problem size (unsorted part) decreases by one element in each step. Other examples include computing a^n, DFS, BFS, and Topological Sorting.</li>
+                                    </ul>
+                                </li>
+                                <li>Decrease by constant factor: Problem size is reduced by a constant factor (usually by two) in each iteration.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Example: Binary Search.</li>
+                                    </ul>
+                                </li>
+                                <li>Variable size decrease: The size reduction pattern varies from one iteration to another.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Example: Euclid's algorithm for GCD.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            - Insertion Sort Example: To sort :
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Initially, is sorted, is unsorted.</li>
+                                <li>Iteration 1: Pick 75. Compare with 25. 75 &gt; 25, no change. Array: [25, 75 | 40, 10, 20].</li>
+                                <li>Iteration 2: Pick 40. Compare with 75. 40 &lt; 75, move 75 right. Compare with 25. 40 &gt; 25, insert 40. Array: [25, 40, 75 | 10, 20].</li>
+                                <li>Iteration 3: Pick 10. Compare with 75, then 40, then 25. All are greater. Move them right and insert 10. Array: [10, 25, 40, 75 | 20].</li>
+                                <li>Iteration 4: Pick 20. Compare with 75, then 40, then 25. Move them right and insert 20. Array: . The array is sorted.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is divide and conquer method? Explain with an example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Divide-and-Conquer method is a top-down algorithmic design technique where a problem is solved by:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Divide: Breaking the problem into a number of smaller subproblems.</li>
+                                <li>Conquer: Solving the subproblems recursively. If the subproblems are small enough, they are solved using a straightforward method.</li>
+                                <li>Combine: Merging the solutions of the subproblems to obtain the solution for the original problem.</li>
+                            </ol>
+                            - This technique is often implemented recursively.
+                            <br>- Example (Merge Sort):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Merge sort is a recursive algorithm that exemplifies the divide-and-conquer strategy.</li>
+                                <li>Divide: An array of n elements is continuously split into two halves until it cannot be divided further (i.e., subarrays contain only one element, which is inherently sorted).</li>
+                                <li>Conquer: Each of these single-element subarrays is considered sorted. The algorithm then recursively sorts the left and right halves.</li>
+                                <li>Combine: The sorted subarrays are then merged back together to form a single sorted array. The key operation is simple merge, which combines two sorted lists into one.</li>
+                                <li>Working Example: To sort an array :
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Divide: Split the array repeatedly into halves: | &rarr; | | | &rarr; | | | | | .</li>
+                                        <li>Conquer &amp; Combine: Start merging from the smallest subarrays:
+                                            <ul class="list-square list-inside ml-4">
+                                                <li>Merge and to get .</li>
+                                                <li>Merge and to get .</li>
+                                                <li>Merge and to get .</li>
+                                                <li>remains .</li>
+                                            </ul>
+                                        </li>
+                                        <li>Continue merging the sorted pairs:
+                                            <ul class="list-square list-inside ml-4">
+                                                <li>Merge and to get .</li>
+                                                <li>Merge and to get .</li>
+                                            </ul>
+                                        </li>
+                                        <li>Finally, merge the two large sorted arrays and to obtain the fully sorted array . (fully sorted)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain complete Binary Tree. [4 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The provided sources discuss Binary Tree traversals and properties of a general Binary Tree, but do not explicitly define a "complete Binary Tree".
+                            <br>- However, the properties of a general binary tree are:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Root Node: The highest node with no parent.</li>
+                                <li>Parent Node: A node that precedes another node in the tree.</li>
+                                <li>Child Node: A node that is a direct successor of a parent node.</li>
+                                <li>Siblings: Children of the same parent node.</li>
+                                <li>Edge: A connection between a parent and child node.</li>
+                                <li>Leaf Node: A node with no children.</li>
+                                <li>Subtree: The tree that considers a specific node as its root.</li>
+                                <li>Depth of a Node: Distance from the root node.</li>
+                                <li>Height of a Node: Distance from itself to the deepest node in its subtree.</li>
+                                <li>Height of the Tree: Maximum height of any node (same as root's height).</li>
+                                <li>Level: Number of parents corresponding to a node.</li>
+                                <li>Node Degree: Number of children a node has.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">For the below Binary Tree, write the Preorder, Inorder and Postorder traversals. [6 Marks] (Note: This question requires a specific binary tree image)</p>
+                            <p class="pl-4 text-gray-400">- The specific binary tree image from your assignment is shown in. Assuming a standard labeling where A is the root, B and C are its children, D and E are B's children, and F is C's child (and G is another child of C not shown or implying a general binary tree structure from the image).
+                            <br>- The notes define and illustrate the traversal techniques with an example tree structure. You would apply these principles to the given tree:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Preorder Traversal (Root-Left-Right): Visit the root, then recursively traverse the left subtree, then recursively traverse the right subtree. - To be applied to the specific graph in. If we follow the example image in the notes, the traversal for a general tree is A &rarr; B &rarr; D &rarr; E &rarr; C &rarr; F &rarr; G.</li>
+                                <li>Inorder Traversal (Left-Root-Right): Recursively traverse the left subtree, then visit the root, then recursively traverse the right subtree. - To be applied to the specific graph in. If we follow the example image in the notes, the traversal for a general tree is D &rarr; B &rarr; E &rarr; A &rarr; F &rarr; C &rarr; G.</li>
+                                <li>Postorder Traversal (Left-Right-Root): Recursively traverse the left subtree, then recursively traverse the right subtree, then visit the root. - To be applied to the specific graph in. If we follow the example image in the notes, the traversal for a general tree is D &rarr; E &rarr; B &rarr; F &rarr; G &rarr; C &rarr; A.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write short notes on Topological sorting. [4 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Topological sorting is a linear ordering of all the vertices in a directed acyclic graph (DAG) G = {V, E}. The key property is that for every directed edge (u, v) in the graph, vertex u must appear before vertex v in the ordering. If a graph contains a cycle, no topological sort is possible.
+                            <br>- It can be viewed as arranging vertices along a horizontal line such that all directed edges point from left to right.
+                            <br>- Methods for Topological Sorting:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>DFS Method: Involves selecting an arbitrary vertex, pushing it onto a stack when first visited, and removing it from the stack when it becomes a "dead end" (all adjacent vertices explored). The reverse order of items removed from the stack gives the topological sequence. The detailed Algorithm DFS for topological sort is in the notes.</li>
+                                <li>Source Removal Method: This method is based on the decrease-and-conquer technique. It repeatedly identifies and removes a vertex with no incoming edges (in-degree 0), along with its outgoing edges. The order in which vertices are removed constitutes the topological sort. The process continues until all vertices are removed or no more source vertices can be found. An example illustration and a detailed step-by-step working are provided.</li>
+                            </ol>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Describe the steps involved in quick sort algorithm for following elements: 24, 9, 29, 14, 19, 27, 8, 10 [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Quick Sort is a sorting algorithm that follows the Divide and Conquer paradigm. It works by picking an element as a pivot and partitioning the array around it, such that all elements smaller than the pivot are on its left, and all larger elements are on its right. The pivot is placed in its correct sorted position.
+                            <br>- Steps involved:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Divide: Select a pivot element. Rearrange the array (partition) so that elements less than or equal to the pivot are on its left, and elements greater than the pivot are on its right.</li>
+                                <li>Conquer: Recursively sort the two subarrays (left and right of the pivot) using Quick Sort.</li>
+                                <li>Combine: The sorted subarrays are already combined since the pivot is in its final position.</li>
+                            </ol>
+                            - Example Steps for 24, 9, 29, 14, 19, 27, 8, 10: (The notes provide a detailed example trace for 24, 9, 29, 14, 19, 27. You would apply the same logic for your specific array.)
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Choosing the Pivot: The notes mention common strategies like choosing the leftmost, rightmost, random, or median element. For the example in notes, the leftmost element 24 is chosen as pivot.</li>
+                                <li>Partitioning: The process involves two pointers (left and right) moving towards each other, swapping elements out of place relative to the pivot.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Initial: , 9, 29, 14, 19, 27, 8, 10 (Pivot 24, low=0, high=7).</li>
+                                        <li>Let 24 be the pivot. Move right pointer from 10. 10 &lt; 24. Swap 24 and 10. Array: . Pivot is now at index 7.</li>
+                                        <li>Move left pointer from 10. 10 &lt; 24, 9 &lt; 24, but 29 &gt; 24. Swap 29 and 24. Array: . Pivot is now at index 2.</li>
+                                        <li>Continue this process until left and right pointers cross. The element at the final right pointer position (after crossing) is swapped with the initial pivot (if it's not already in place) to place the pivot in its sorted position.</li>
+                                        <li>Once 24 is in its final position, say at index k, the array is divided into two subproblems: [elements &lt; 24] and [elements &gt; 24].</li>
+                                    </ul>
+                                </li>
+                                <li>Recursive Calls: QuickSort is then called recursively on arr[low...k-1] and arr[k+1...high] until all subarrays are sorted.</li>
+                            </ul>
+                            - The detailed Algorithm QuickSort and partition function are provided in the source.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the steps of merge-sort technique using an example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The Merge Sort technique is a Divide and Conquer algorithm for sorting elements, particularly efficient for large datasets.
+                            <br>- Steps involved:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Divide: The given unsorted array of n elements is divided into two equal halves. This division continues recursively until the array cannot be further divided, meaning each "subarray" contains only one element. A single-element array is considered sorted.</li>
+                                <li>Conquer: The left part and the right part of the array are sorted recursively using merge sort.</li>
+                                <li>Combine (Merge): The key operation. The two already sorted subarrays (left and right) are merged into a single, larger sorted array. This SimpleMerge operation compares elements from the two sorted halves and places them into a temporary array in sorted order.</li>
+                            </ol>
+                            - Working Example: A detailed example trace with an unsorted array is provided in the notes. For instance, starting with :
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Divide: Repeatedly split the array: and , and , , , and , , ,</li>
+                                <li>Combine: Start merging the single-element arrays:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Merge and to get .</li>
+                                        <li>Merge and to get .</li>
+                                        <li>Merge and to get .</li>
+                                        <li>remains .</li>
+                                    </ul>
+                                </li>
+                                <li>Merge the two-element sorted arrays:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Merge and to get .</li>
+                                        <li>Merge and to get .</li>
+                                    </ul>
+                                </li>
+                                <li>Finally, merge the two four-element sorted arrays:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Merge and to get . (fully sorted)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            - The detailed Algorithm MergeSort and SimpleMerge are provided in the source.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain Binary Search using an example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Binary Search is an efficient searching technique that can only be applied to a data structure that is sorted (either ascending or descending order). It drastically reduces the number of comparisons needed compared to linear search.
+                            <br>- Working Principle:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>The search space is divided into two halves by finding the middle index (mid).</li>
+                                <li>The element at mid is compared with the key (the target element).</li>
+                                <li>If key is found at mid, the search terminates successfully.</li>
+                                <li>If key is not at mid:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>If key is smaller than the middle element, the search continues in the left half of the current search space.</li>
+                                        <li>If key is larger than the middle element, the search continues in the right half of the current search space.</li>
+                                    </ul>
+                                </li>
+                                <li>This process of halving the search space continues until the key is found or the search space is exhausted (meaning key is not present).</li>
+                            </ol>
+                            - Example: Searching for 31 in a sorted array (an array from the notes, slightly adapted for continuity)
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Initial: low = 0, high = 8. mid = 0 + (8-0)/2 = 4. array = 31.</li>
+                                <li>Compare: key (31) == array[mid] (31). Match found at index 4. Search terminates.</li>
+                            </ul>
+                            - Another example from notes: Searching for 31 in (low=0, high=9)
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>mid = 0 + (9-0)/2 = 4. array = 31. Match found.</li>
+                            </ul>
+                            - If searching for a different value, say 42 in :
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>low = 0, high = 9. mid = 4. array = 31. 42 &gt; 31. Search in right half.</li>
+                                <li>low = mid + 1 = 5, high = 9. mid = 5 + (9-5)/2 = 7. array = 42. Match found at index 7.</li>
+                            </ul>
+                            - The detailed Algorithm BinarySearch is provided in the source.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Question 5:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Generate MST for the below graph using Prim’s method. [6 Marks] (Note: This question requires a specific graph image)</p>
+                            <p class="pl-4 text-gray-400">- The specific graph image from your assignment is shown in.
+                            <br>- Prim's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a weighted graph. An MST is a spanning tree (a connected, acyclic subgraph containing all vertices) where the sum of edge weights is minimized.
+                            <br>- Steps to implement Prim's Algorithm:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Initialize MST: Start with a randomly chosen vertex.</li>
+                                <li>Find Minimum Edge: Identify all edges connecting the current MST to unvisited vertices. Select the edge with the minimal weight among these, ensuring it does not form a cycle with the edges already in the MST (though Prim's inherently avoids cycles if growing from a connected component).</li>
+                                <li>Add to MST: Add the chosen minimum-weight edge and its connected unvisited vertex to the MST.</li>
+                                <li>Repeat: Continue steps 2 and 3 until all vertices are included in the MST.</li>
+                            </ol>
+                            - The notes provide a detailed example of Prim's algorithm with a weighted graph, showing the step-by-step selection of edges and the calculation of the MST cost. You would apply this method to the graph provided in your assignment.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the differences between Prims and Kruskals Algorithm. [4 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Both Prim's and Kruskal's algorithms are greedy algorithms used to find the Minimum Spanning Tree (MST) of a weighted graph. However, they differ in their approach:
+                            <br>- Prim's Algorithm:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Approach: Starts from a single vertex and grows the MST by iteratively adding the minimum-weight edge that connects a vertex already in the MST to a vertex not yet in the MST. It builds the tree as a single connected component.</li>
+                                <li>Data Structure: Typically uses a priority queue or an adjacency matrix/list to efficiently find the minimum-weight edge from the "fringe" of the growing tree.</li>
+                                <li>Focus: Expands an existing tree.</li>
+                            </ul>
+                            - Kruskal's Algorithm:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Approach: Sorts all edges in the graph by weight in non-decreasing order. It then iteratively adds the smallest-weight edge that does not form a cycle with the edges already selected, potentially creating multiple disconnected components (forest) before eventually connecting them into a single tree.</li>
+                                <li>Data Structure: Typically uses a Disjoint Set Union (DSU) data structure to efficiently check for cycles when adding edges.</li>
+                                <li>Focus: Connects individual components.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Find the shortest path using Dijkstra’s Algorithm (Method). Briefly explain the steps involved. [10 Marks] (Note: This question requires a specific graph image)</p>
+                            <p class="pl-4 text-gray-400">- The specific graph image from your assignment is shown in.
+                            <br>- Dijkstra's Algorithm solves the single-source shortest path problem, which means finding the shortest distances from a given source vertex to all other vertices in a weighted graph (where edge weights are non-negative). It is a greedy algorithm.
+                            <br>- Steps involved:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Initialization: Mark the source node with a current distance of 0 and all other nodes with INFINITY. Mark all nodes as unvisited.</li>
+                                <li>Select Current Node: Choose the unvisited node with the smallest current distance as the current node (say, X).</li>
+                                <li>Relaxation: For each neighbor N of X:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Calculate a new_distance = current_distance(X) + weight_of_edge(X, N).</li>
+                                        <li>If new_distance is smaller than current_distance(N), update current_distance(N) to new_distance.</li>
+                                    </ul>
+                                </li>
+                                <li>Mark Visited: Mark the current node X as visited.</li>
+                                <li>Repeat: Continue steps 2-4 until all nodes are visited or all unvisited nodes have a distance of infinity (meaning they are unreachable).</li>
+                            </ol>
+                            - The notes provide a detailed example of Dijkstra's Algorithm with a graph, starting from node A, illustrating each step of initialization, relaxation, and marking nodes as visited until the final shortest paths are determined. You would apply this method to the graph provided in your assignment.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Explain the steps of prim's algorithm for finding minimum spanning tree using an example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- This question is a repetition of "Generate MST for the below graph using Prim’s method." The explanation of Prim's Algorithm and its steps is detailed above and found in.
+                            <br>- Steps to implement Prim's Algorithm:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Initialize MST: Start with a randomly chosen vertex.</li>
+                                <li>Find Minimum Edge: Identify all edges connecting the current MST to unvisited vertices. Select the edge with the minimal weight among these, ensuring it does not form a cycle.</li>
+                                <li>Add to MST: Add the chosen minimum-weight edge and its connected unvisited vertex to the MST.</li>
+                                <li>Repeat: Continue until all vertices are included in the MST.</li>
+                            </ol>
+                            - The example trace in the notes for a weighted graph can be used to illustrate these steps.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What does NP complete mean? Give an example. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- NP-complete problems are the hardest problems within the class NP (Non-deterministic Polynomial time problems). A problem is NP-complete if:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>It is in NP: A solution to the problem can be verified in polynomial time by a non-deterministic Turing machine.</li>
+                                <li>It is NP-hard: Any other problem in NP can be reduced to it in polynomial time. This means that if an NP-complete problem could be solved efficiently (in polynomial time), then all problems in NP could be solved efficiently.</li>
+                            </ol>
+                            - Currently, no polynomial-time solution is known for any NP-complete problem, and finding one is a major open problem in computer science (P vs. NP problem).
+                            <br>- Example: The Traveling Salesman Problem (TSP) is a classic example of an NP-complete problem. This problem involves finding the shortest possible route that visits a set of cities and returns to the origin city, visiting each city exactly once. While a proposed tour can be quickly verified for its total length, finding the optimal shortest tour for a large number of cities requires exploring an exponentially growing number of possibilities.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Discuss about Lower-Bound arguments. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Lower-Bound arguments establish the minimum amount of time or space complexity theoretically required to solve a computational problem. They define a theoretical limit on the performance of the best possible algorithm for a given problem, independent of specific hardware.
+                            <br>- Purpose:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>They help prove the optimality of algorithms. If an algorithm's complexity matches the problem's lower bound, it means there cannot be a faster algorithm in terms of asymptotic growth.</li>
+                                <li>They help rule out certain approaches to a problem, as any approach that cannot beat the lower bound is unlikely to yield an optimal algorithm.</li>
+                                <li>They contribute to classifying problems into complexity classes (e.g., problems with linear lower bounds are in P, exponential lower bounds often suggest NP-Complete problems).</li>
+                            </ul>
+                            - Techniques: Proving lower bounds is challenging and often involves techniques like contradiction, adversary arguments, or information theory.
+                            <br>- Example: Comparison sorting algorithms have a theoretical lower bound of &Omega;(n log n). Algorithms like Merge Sort and Heapsort achieve this complexity, thus they are considered asymptotically optimal comparison sorts.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">With suitable example explain decision trees. [5 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Decision trees are flowchart-like tree structures primarily used for supervised learning and classification problems. Each internal node in the tree represents a test or decision based on an attribute's value, each branch represents an outcome of that test, and each leaf node represents a class label or decision. The goal is to build a model that predicts a target variable's value from input variables.
+                            <br>- How they are built:
+                            <ol class="list-decimal list-inside ml-4 text-gray-400">
+                                <li>Start with a root node containing the entire dataset.</li>
+                                <li>At each internal node, the data is split into subsets based on the most significant attribute/predictor. This splitting is recursive.</li>
+                                <li>The process continues until leaf nodes are "pure" (containing data entries belonging to the same class).</li>
+                            </ol>
+                            - Decision trees can handle both categorical and continuous input variables.
+                            <br>- Example (Predicting University Admission):
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Suppose we want to predict if a student gets admitted based on exam score and interview performance. We have historical data (scores and admission decision: yes/no).</li>
+                                <li>Root Node: Contains the entire dataset.</li>
+                                <li>The algorithm might identify exam score as the best attribute to split the data.</li>
+                                <li>Split 1 (Internal Node): Based on Exam score.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Branch 1: Exam score &lt; 60</li>
+                                        <li>Branch 2: Exam score &gt;= 60 (This branch might already be "pure," leading directly to "Admitted").</li>
+                                    </ul>
+                                </li>
+                                <li>Split 2 (Internal Node from Branch 1): The Exam score &lt; 60 branch might then be split based on Interview performance.
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Branch 1a: Interview score &lt; 80 -&gt; Leaf Node: "Not Admitted"</li>
+                                        <li>Branch 1b: Interview score &gt;= 80 -&gt; Leaf Node: "Admitted".</li>
+                                    </ul>
+                                </li>
+                                <li>Prediction: To predict for a new student (Exam=65, Interview=90), you traverse the tree: Exam score &gt;= 60 leads directly to "Admitted".</li>
+                            </ul>
+                            - Key aspects: Recursive splitting for purer subsets, using historical data to create rules, and making predictions by traversing the tree from root to leaf.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700 p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-400 mt-8 border-b-2 border-gray-600 pb-1">PART - B (Each question in this section is worth 2 marks)</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Define Algorithm. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- An algorithm is a finite sequence of unambiguous instructions followed to accomplish a given task, accepting inputs and producing desired outputs in a finite number of steps.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is the difference between time complexity and space complexity? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Time complexity measures how fast an algorithm is executed, purely based on its running time. Space complexity measures the amount of memory an algorithm requires to run completely and efficiently.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What are the sequence, selection and iterative constructs of an Algorithm? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The provided sources do not explicitly define "sequence, selection, and iterative constructs of an Algorithm." These are fundamental programming concepts (sequential execution, conditional statements like if-else, and loops like for/while).</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Define Recursion. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Recursion is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem. A recursive function is one that calls itself during its execution.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the recursive expression to find factorial of a number. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The recursive expression for factorial n! is:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Factorial(n) = n * Factorial(n-1) for n &gt; 1</li>
+                                <li>Factorial(1) = 1</li>
+                                <li>Factorial(0) = 1 (This is the base case, as mentioned in).</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the Best Case, Average Case and Worst Cases of sequential search algorithm. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- For sequential search algorithm:
+                            <ul class="list-disc list-inside ml-4 text-gray-400">
+                                <li>Best Case: O(1), when the target element is at the beginning of the list.</li>
+                                <li>Average Case: O(n), when the target element is randomly located in the list.</li>
+                                <li>Worst Case: O(n), when the target element is at the end of the list or not present.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the properties of Binary Tree. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Properties of a Binary Tree include having a single root node (no parent), parent nodes and child nodes, leaf nodes (no children), and edges connecting nodes. Other properties include depth, height, level, and node degree.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is NP problem? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- NP (Non-deterministic Polynomial time) refers to the set of problems for which a given solution (or certificate) can be verified in polynomial time by a non-deterministic Turing machine. Finding the solution itself might take more than polynomial time.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Write the challenges of Numerical Algorithms. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The provided sources list "Challenges of Numerical Algorithms" as a topic, but do not describe or elaborate on what these challenges are. Therefore, this information is not available in the given sources.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is a pivot value? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- In algorithms like Quick Sort, a pivot value is an element chosen from an array that is used to partition the array. Elements smaller than the pivot are moved to one side, and elements larger than it are moved to the other, placing the pivot in its final sorted position.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">Define vertex and edge. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- While not explicitly defined as fundamental terms, the context of graph algorithms implies: A vertex (or node) represents an entity in a graph (e.g., a city in TSP). An edge (or link) represents a connection or relationship between two vertices (e.g., a path between cities).</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is Recursion? Give an example. [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller instances of the same problem. - Example: The factorial function n! is a common example. Factorial(n) calls Factorial(n-1) until it reaches a base case like Factorial(0)=1 or Factorial(1)=1.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is DFS? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- DFS (Depth-First Search) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. It uses a stack implicitly or explicitly to keep track of vertices to visit, going deep into the graph along a path before exploring other branches.</p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="font-medium text-gray-400">What is the difference between Graph and Tree? [2 Marks]</p>
+                            <p class="pl-4 text-gray-400">- The primary difference lies in their structure: - A Graph is a set of vertices (nodes) connected by edges, which can be directed or undirected, and can contain cycles. - A Tree is a special type of graph that is an undirected, connected, and acyclic (contains no cycles) graph. A spanning tree, for instance, is a subgraph of a connected graph that is itself a tree and includes all the original vertices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
